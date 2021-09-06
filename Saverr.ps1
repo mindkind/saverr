@@ -1455,7 +1455,7 @@ $button_download.Add_Click({
                 $mediaURL = $scheme + $settings.server + $info.key + "?X-Plex-Token=" + $settings.serverToken
                 $mediaPath = plx $mediaURL
                 $mediaInfo = $mediaPath.MediaContainer.Video.Media.Part | select key,file -First 1
-                $dlURL = $scheme + $settings.server + $mediaInfo.key + "?download=1" + "&X-Plex-Token=" + $settings.serverToken
+                $dlURL = $scheme + $settings.server + $mediaInfo.key + "?X-Plex-Token=" + $settings.serverToken
                 $script:dlName = Split-Path $mediaInfo.file -Leaf
                 $script:dlType = "one"
             }
@@ -1529,7 +1529,7 @@ $button_download.Add_Click({
                     $mediaURL = $scheme + $settings.server + $infoEp.key + "?X-Plex-Token=" + $settings.serverToken
                     $mediaPath = plx $mediaURL
                     $mediaInfo = $mediaPath.MediaContainer.Video.Media.Part | select key,file -First 1
-                    $dlURL = $scheme + $settings.server + $mediaInfo.key + "?download=1" + "&X-Plex-Token=" + $settings.serverToken
+                    $dlURL = $scheme + $settings.server + $mediaInfo.key + "?X-Plex-Token=" + $settings.serverToken
                     $script:dlName = Split-Path $mediaInfo.file -Leaf
                     $script:dlType = "one"
                 }
@@ -1610,7 +1610,7 @@ $button_download.Add_Click({
                     $mediaPath = plx $mediaURL
                     $mediaInfo = $mediaPath.MediaContainer.track.media.part | select key,file -First 1
                     $mediaInfo2 = $mediaPath.MediaContainer.track | select grandparentTitle,parentTitle,title -First 1
-                    $dlURL = $scheme + $settings.server + $mediaInfo.key + "?download=1" + "&X-Plex-Token=" + $settings.serverToken
+                    $dlURL = $scheme + $settings.server + $mediaInfo.key + "?X-Plex-Token=" + $settings.serverToken
                     $script:dlName = Split-Path $mediaInfo.file -Leaf
                     $script:dlType = "one"
                 }
